@@ -11,23 +11,19 @@ function Header() {
         My Store
       </Link>
 
-      {/* Search bar */}
-      <input
-        type="text"
-        placeholder="Search..."
-        className="w-full p-2 mt-4 max-w-md"
-      />
 
       {/* Navigation */}
-      <nav className="flex justify-between">
-        <div className="space-x-6">
+      <nav className="flex flex-row justify-between">
+        <div className="space-x-4 flex items-center">
           {/* Links for other pages */}
-          <Link to="/contact" className="hover:underline">
-            Contact
+          <Link to="/" className="hover:underline">
+            View Products
           </Link>
-          <Link to="/cart" className="hover:underline">
-            Cart
+          <Link to="/contact" className="hover:underline">
+            Contact Us
+          </Link>
 
+          <Link to="/cart" className="hover:underline">
           {/* Cart icon */}
           <CartIcon />
           </Link>

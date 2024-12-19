@@ -5,21 +5,24 @@ import CartPage from "./pages/CartPage";
 import CheckoutSuccessPage from "./pages/CheckoutSuccessPage";
 import ContactPage from "./pages/ContactPage";
 import Layout from "./components/Layout.jsx";
+import { CartProvider } from "./context/CartContext.jsx";
 
 
 function App() {
   return (
+    <CartProvider>
     <Router>
       <Routes>
       <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path="product/:id" element={<ProductPage />} />
+          <Route path="products/:id" element={<ProductPage />} />
           <Route path="cart" element={<CartPage />} />
           <Route path="checkout-success" element={<CheckoutSuccessPage />} />
           <Route path="contact" element={<ContactPage />} />
         </Route>
       </Routes>
     </Router>
+    </CartProvider>
   );
 }
 

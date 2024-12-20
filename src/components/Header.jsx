@@ -11,10 +11,11 @@ function Header() {
     <div className="bg-blue-900 text-white w-full fixed top-0 z-10 ">
       <header className="bg-blue-900 text-white p-4 max-w-7xl flex justify-between mx-auto">
         {/* Logo */}
-        <Link to="/" className="text-4xl text-md-xl font-bold font-heading">
-          Storesville
-          <img src="../../public/Shop.png" alt="" />
-        </Link>
+        <Link to="/" className="text-4xl text-md-xl font-bold font-heading flex items-center">
+  Storesville
+  <img className="h-12" src="/Shop.png" alt="Storesville Logo" />
+</Link>
+
 
         {/* Navigation */}
         <nav className="flex flex-row justify-between">

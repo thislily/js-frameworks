@@ -71,15 +71,6 @@ export const CartProvider = ({ children }) => {
     setCart([]);
   }
 
-  // Open cart
-  const openCart = () => {
-    setIsCartOpen(true);
-  };
-
-  // Close cart
-  const closeCart = () => {
-    setIsCartOpen(false);
-  };
 
 
   return (
@@ -93,8 +84,6 @@ export const CartProvider = ({ children }) => {
         removeFromCart,
         updateQuantity,
         clearCart,
-        openCart,
-        closeCart,
         cartRef,
       }}
     >

@@ -64,7 +64,7 @@ function ProductPage() {
       <div className="flex flex-col sm:flex-row gap-2 md:gap-8">
         <div className="relative pt-4">
           <img
-            className="object-cover aspect-square min-h-80 "
+            className="object-cover aspect-square min-h-80 border-2 border-gray-200 rounded-lg"  
             src={product.image.url}
             alt={product.title}
           />

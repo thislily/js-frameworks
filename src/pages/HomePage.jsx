@@ -31,6 +31,7 @@ function HomePage() {
   }, []);
 
   useEffect(() => {
+    if (!products) return;
     // Filter products based on the search term
     setFilteredProducts(
       products.filter((product) =>
@@ -39,13 +40,19 @@ function HomePage() {
     );
   }, [searchTerm, products]);
 
+  if (!products) {
+    return <MessageBox border='darkred 4px solid' message='We are having some dificulties, please come back later!' />;
+  }
+
   return (
     <div>
       <h1 className='font-heading text-4xl text-center my-6' >Welcome home friend, get shoppin'!</h1>
 
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       {loading && <LoadingBar />}
-      {error && <MessageBox border='border-red-600' message='Something went wrong' />}
+      {error && <MessageBox border='darkred 4px solid' message='Something went wrong' />}
+      {filteredProducts.length === 0 && <MessageBox border='darkred 4px solid' message='No products found' />}
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {filteredProducts.map((product) => (
           <ProductCard key={product.id} product={product} />

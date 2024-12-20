@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./Button";
+import StarRating from "./StarRating";
 
 function ProductCard({ product }) {
   return (
@@ -41,6 +42,21 @@ function ProductCard({ product }) {
           <span>${product.price.toFixed(2)}</span>
         )}
       </p>
+
+      <StarRating rating={product.rating} />
+      <p>
+        Tags:{" "}
+        {product.tags && product.tags.length > 0 ? (
+          product.tags.map((tag, index) => (
+            <span key={index} className="italic font-bold">
+              {tag}{index < product.tags.length - 1 ? ", " : ""}
+            </span>
+          ))
+        ) : (
+          <span className="">none</span>
+        )}
+      </p>
+
       <Button text={"See Details"} />
     </a>
   );

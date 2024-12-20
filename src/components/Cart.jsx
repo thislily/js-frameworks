@@ -27,22 +27,7 @@ function Cart() {
               className="w-32 h-32 object-cover aspect-square rounded-md"
             />
             <div className="flex flex-col justify-between w-full ml-2 ">
-              <h3 className="font-semibold text-lg">
-                {item.title}  
-                <span>
-                  
-                  {item.discountedPrice < item.price ? (
-                    <span className="text-red-500 ps-2">
-                        {Math.round(
-                        ((item.price - item.discountedPrice) / item.price) * 100
-                      )}
-                      % Off!
-                    </span>
-                  ) : (
-                    ""
-                  )}
-                </span>
-              </h3>
+              <h3 className="font-semibold text-lg">{item.title}</h3>
               <div className="flex flex-row gap-1">
                 Quantity:
                 <button
@@ -84,7 +69,7 @@ function Cart() {
               </p>
               <div className="flex items-end justify-end">
                 <button
-                  className="text-right w-28 border-2 border-gray-200 rounded-md p-1 px-2"
+                  className="text-right w-28 border-2 border-gray-200 rounded-md p-1 px-2 mt-2"
                   onClick={() => removeFromCart(item.id)}
                 >
                   Remove

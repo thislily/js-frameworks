@@ -5,10 +5,10 @@ import Footer from './Footer'
 
 function Layout() {
   return (
-    <div>
+    <div className='mt-16 font-body font-medium bg-gray-400'>
       <Header />
 
-      <main className="flex-grow p-4 min-h-screen mx-auto max-w-7xl">
+      <main className="flex-grow p-4 min-h-screen mx-auto max-w-7xl bg-gray-100 pb-16">
         {/* This is where page content will be rendered */}
         <Outlet />
       </main>

@@ -8,7 +8,7 @@ function SearchBar({ searchTerm, setSearchTerm }) {
         placeholder="Search for a product..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="border rounded p-2 max-w-xl w-full mx-auto"
+        className="border-gray-600 font-medium border-2 rounded p-2 max-w-xl w-full mx-auto"
       />
     </div>
   );

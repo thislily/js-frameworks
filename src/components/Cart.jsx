@@ -17,14 +17,32 @@ function Cart() {
       <h2 className="text-xl font-extrabold text-center">Shopping Cart</h2>
       {cart.length > 0 ? (
         cart.map((item, index) => (
-          <div className="bg-white my-2 p-2 flex flex-row gap-2 rounded-md" key={index}>
+          <div
+            className="bg-white my-2 p-2 flex flex-row gap-2 rounded-md"
+            key={index}
+          >
             <img
               src={item.image.url}
               alt={item.title}
               className="w-32 h-32 object-cover aspect-square rounded-md"
             />
             <div className="flex flex-col justify-between w-full ml-2 ">
-              <h3 className="font-semibold text-lg">{item.title}</h3>
+              <h3 className="font-semibold text-lg">
+                {item.title}  
+                <span>
+                  
+                  {item.discountedPrice < item.price ? (
+                    <span className="text-red-500 ps-2">
+                        {Math.round(
+                        ((item.price - item.discountedPrice) / item.price) * 100
+                      )}
+                      % Off!
+                    </span>
+                  ) : (
+                    ""
+                  )}
+                </span>
+              </h3>
               <div className="flex flex-row gap-1">
                 Quantity:
                 <button
@@ -87,15 +105,19 @@ function Cart() {
           <>
             {totalItems} item{totalItems > 1 ? "s" : ""} in cart
             <br />
-            <span className="text-red-500">   
-            You Saved: 
-            ${cart.reduce((acc, item) => {
-              return acc + (item.price - item.discountedPrice) * item.quantity;
-            }, 0).toFixed(2)}
+            <span className="text-red-500">
+              You Saved: $
+              {cart
+                .reduce((acc, item) => {
+                  return (
+                    acc + (item.price - item.discountedPrice) * item.quantity
+                  );
+                }, 0)
+                .toFixed(2)}
             </span>
             <br />
             <span className="text-xl font-bold">
-            Total Price: ${totalPrice.toFixed(2)}
+              Total Price: ${totalPrice.toFixed(2)}
             </span>
           </>
         ) : (

@@ -60,17 +60,21 @@ function ProductPage() {
   }
 
   return (
-    <div className="flex flex-col items-center pb-16 mx-0 px-0">
+    <div className="flex flex-col items-center pb-16 mx-0 px-0 mt-4">
       <div className="flex flex-col sm:flex-row gap-2 md:gap-8">
         <div className="relative pt-4">
           <img
-            className="object-cover aspect-square min-h-80 border-2 border-gray-200 rounded-lg"  
+            className="object-cover aspect-square min-h-80 border-2 border-gray-200 rounded-lg"
             src={product.image.url}
             alt={product.title}
           />
           {product.discountedPrice < product.price && (
             <div className="absolute top-8 left-4 bg-orange-600 text-white rounded-xl p-4 text-lg">
-              Sale
+              {Math.round(
+                ((product.price - product.discountedPrice) / product.price) *
+                  100
+              )}
+              % Off!
             </div>
           )}
         </div>

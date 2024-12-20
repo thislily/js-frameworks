@@ -1,3 +1,14 @@
+/**
+ * @file Cart component
+ * @name Cart
+ * @requires react
+ * @requires CartContext
+ * @requires FontAwesomeIcon
+ * @requires MessageBox
+ * @returns {JSX.Element} Cart component
+ * 
+ */
+
 import React from "react";
 import { useCart } from "../context/CartContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

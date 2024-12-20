@@ -5,16 +5,20 @@ import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 
 function CartPage() {
- const { clearCart } = useCart();
+ const { cart, clearCart } = useCart();
 
   return (
     <div>
       <h1 className="font-heading text-4xl text-center my-6">Checkout</h1>
       <Cart />
       <div className="flex justify-center my-6">
-        <Link to="/checkout-success">
-          <Button onClick={clearCart} text="Place Your Order" />
-        </Link>
+        {cart.length > 0 && ( 
+          <Link to="/checkout-success">
+            <Button onClick={clearCart} text="Place Your Order"/>
+          </Link>
+        )}
+          
+
       </div>
     </div>
   );

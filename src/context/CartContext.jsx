@@ -17,7 +17,6 @@ export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState(getCartFromLocalStorage);
   const [totalItems, setTotalItems] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
-  const [isCartOpen, setIsCartOpen] = useState(false);
   const cartRef = useRef(null);
 
   // Update local storage when cart changes
@@ -79,7 +78,6 @@ export const CartProvider = ({ children }) => {
         cart,
         totalItems,
         totalPrice,
-        isCartOpen,
         addToCart,
         removeFromCart,
         updateQuantity,

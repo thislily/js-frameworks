@@ -13,6 +13,7 @@ function Header() {
         {/* Logo */}
         <Link to="/" className="text-4xl text-md-xl font-bold font-heading">
           Storesville
+          <img src="../../public/Shop.png" alt="" />
         </Link>
 
         {/* Navigation */}

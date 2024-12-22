@@ -1,3 +1,9 @@
+/**
+ * @fileoverview Contact Page component that displays a form for users to submit a contact request.
+ * @name ContactPage
+ * @returns JSX.Element and console.logs the form data when submitted
+ */
+
 import React, { useState } from 'react';
 import MessageBox from '../components/MessageBox';
 
@@ -68,7 +74,7 @@ function ContactPage() {
 
       {successMessage && (
         <MessageBox
-          border="green 2px solid"
+          border="green 4px solid"
           message="Form submitted successfully!"
         />
       )}

@@ -1,3 +1,9 @@
+/**
+ * @file CartPage.jsx is the page where the user can see the items in their cart and place an order.
+ * @name CartPage
+ * @returns {JSX.Element} CartPage component 
+ */
+
 import React from "react";
 import Cart from "../components/Cart.jsx";
 import Button from "../components/Button.jsx";
@@ -17,8 +23,6 @@ function CartPage() {
             <Button onClick={clearCart} text="Place Your Order"/>
           </Link>
         )}
-          
-
       </div>
     </div>
   );

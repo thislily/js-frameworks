@@ -1,3 +1,12 @@
+/**
+ * @fileoverview App component - The main component of the application
+ * @name App
+ * @Uses CartProvider to provide the cart state to all components
+ * @Uses Router to manage the routes of the application
+ * @returns JSX.Element
+ * 
+ */
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";

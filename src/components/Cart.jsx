@@ -1,10 +1,6 @@
 /**
  * @file Cart component
  * @name Cart
- * @requires react
- * @requires CartContext
- * @requires FontAwesomeIcon
- * @requires MessageBox
  * @returns {JSX.Element} Cart component
  * 
  */

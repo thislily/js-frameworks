@@ -1,12 +1,17 @@
+/**
+ * @file CartContext.jsx is the context for managing the cart state.
+ * @name CartContext
+ * @returns {CartProvider} CartProvider component
+ * 
+ */
+
 import React, { createContext, useContext, useState, useEffect, useRef } from "react";
 
-// Create a context
+// Create context for cart and export it
 const CartContext = createContext();
-
-// Custom hook for accessing the cart context
 export const useCart = () => useContext(CartContext);
 
-// Helper function to retrieve the cart from local storage
+// Retrieve cart from local storage
 const getCartFromLocalStorage = () => {
   const savedCart = localStorage.getItem("cart");
   return savedCart ? JSON.parse(savedCart) : [];
@@ -70,8 +75,7 @@ export const CartProvider = ({ children }) => {
     setCart([]);
   }
 
-
-
+  // Provide the context value to the app
   return (
     <CartContext.Provider
       value={{

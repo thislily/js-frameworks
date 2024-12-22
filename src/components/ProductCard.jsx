@@ -1,9 +1,17 @@
+/**
+ * @file ProductCard component
+ * @name ProductCard
+ * @param {object} product - The product object to display
+ * @returns {JSX.Element} Product card component for displaying product details
+ */
+
 import React from "react";
 import Button from "./Button";
 import StarRating from "./StarRating";
 
 function ProductCard({ product }) {
   return (
+    // Display the product details
     <a
       href={`/products/${product.id}`}
       className="border-2 rounded-md border-gray-2 bg-white p-4 max-w-sm mx-auto h-px-120 flex flex-col justify-between gap-2"
@@ -15,6 +23,7 @@ function ProductCard({ product }) {
           src={product.image.url}
           alt={product.title}
         />
+        // Display the discount percentage if the product is on sale
         {product.discountedPrice < product.price && (
           <div className="absolute top-2 right-2 bg-orange-600 text-white rounded-xl p-2">
             {Math.round(
@@ -29,6 +38,7 @@ function ProductCard({ product }) {
       <p>
         {product.price > product.discountedPrice ? (
           <>
+          // Display the original price with a strikethrough and the discounted price
             <span
               style={{
                 textDecoration: "line-through",
@@ -45,6 +55,7 @@ function ProductCard({ product }) {
         )}
       </p>
 
+// Display the product rating
       <StarRating rating={product.rating} />
       <p>
         Tags:{" "}

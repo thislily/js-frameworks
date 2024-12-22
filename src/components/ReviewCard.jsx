@@ -1,5 +1,12 @@
+/**
+ * @fileoverview ReviewCard component that displays a user's review with their username, description, and rating.
+ * @name ReviewCard
+ * @param {object} props - The props object containing the username, description, and rating of the review
+ * @returns JSX.Element
+ */
+
 import React from 'react';
-import StarRating from './StarRating';  // Assuming you have the StarRating component from earlier
+import StarRating from './StarRating';
 
 function ReviewCard({ username, description, rating }) {
   return (
@@ -7,6 +14,7 @@ function ReviewCard({ username, description, rating }) {
       <h3 className="font-bold text-lg">{username}</h3>
       <p className="italic text-gray-600">{description}</p>
       <div className="flex items-center">
+        // Display the star rating
         <StarRating rating={rating} />
       </div>
     </div>

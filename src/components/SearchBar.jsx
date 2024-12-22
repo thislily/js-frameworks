@@ -1,3 +1,11 @@
+/**
+ * @file SearchBar.jsx
+ * @name SearchBar
+ * @param {string} searchTerm - The search term to filter products
+ * @param {function} setSearchTerm - The function to set the search term
+ * @returns {JSX.Element} Search bar component
+ */
+
 import React from 'react';
 
 function SearchBar({ searchTerm, setSearchTerm }) {

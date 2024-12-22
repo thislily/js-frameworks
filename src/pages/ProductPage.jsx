@@ -1,3 +1,10 @@
+/**
+ * @file ProductPage.jsx is the page component for displaying a single product.
+ * @name ProductPage
+ * @returns {JSX.Element} ProductPage component
+ * 
+ */
+
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchProductById } from "../service/api";
@@ -34,16 +41,17 @@ function ProductPage() {
     fetchApi();
   }, [id, product]); // Add 'product' to avoid fetching again if it's already set
 
+  // Add product to cart and handle loading state and button text change
   const handleAddToCart = async (product) => {
-    if (isAdding) return; // Prevent adding if already adding
-    setIsAdding(true); // Set adding flag to true
+    if (isAdding) return;
+    setIsAdding(true);
 
     try {
-      await addToCart(product); // Add product to cart
-      setButtonText("Item added!"); // Change button text
-      setTimeout(() => setButtonText("Add to Cart"), 2000); // Reset after 2 seconds
+      await addToCart(product);
+      setButtonText("Item added!");
+      setTimeout(() => setButtonText("Add to Cart"), 2000);
     } finally {
-      setIsAdding(false); // Reset adding flag
+      setIsAdding(false);
     }
   };
 
@@ -68,6 +76,7 @@ function ProductPage() {
             src={product.image.url}
             alt={product.title}
           />
+          {/* Display the discount percentage if the product is on sale */}
           {product.discountedPrice < product.price && (
             <div className="absolute top-8 left-4 bg-orange-600 text-white rounded-xl p-4 text-lg">
               {Math.round(
@@ -84,6 +93,7 @@ function ProductPage() {
           </h1>
           <p>{product.description}</p>
           <p>
+            {/* Display the original price with a strikethrough and the discounted price */}
             {product.price > product.discountedPrice ? (
               <>
                 <span
@@ -102,6 +112,7 @@ function ProductPage() {
             )}
           </p>
 
+          {/* Display the product rating */}
           <StarRating rating={product.rating} />
 
           <p>
@@ -119,9 +130,9 @@ function ProductPage() {
           </p>
 
           <Button
-            text={buttonText} // Use the dynamic button text
+            text={buttonText}
             onClick={() => handleAddToCart(product)}
-            disabled={isAdding} // Disable button during the operation
+            disabled={isAdding}
           />
         </div>
       </div>

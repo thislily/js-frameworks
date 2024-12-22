@@ -1,3 +1,10 @@
+/**
+ * @file Footer.jsx
+ * @name Footer
+ * @returns {JSX.Element} Footer component
+ *
+ */
+
 import React from "react";
 
 function Footer() {

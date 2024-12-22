@@ -1,3 +1,9 @@
+/**
+ * @file LoadingBar component
+ * @name LoadingBar
+ * @returns {JSX.Element} Loading bar component
+ */
+
 function LoadingBar() {
     return (
       <div className="flex justify-center items-center mt-10">
@@ -9,4 +15,3 @@ function LoadingBar() {
   }
   
   export default LoadingBar;
-  

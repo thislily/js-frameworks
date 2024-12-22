@@ -1,3 +1,9 @@
+/**
+ * @file HomePage.jsx is the home page where the user can see all the products and search for a product.
+ * @name HomePage
+ * @returns {JSX.Element} Home page component
+ */
+
 import React, { useEffect, useState } from 'react';
 import { fetchProducts } from '../service/api';
 import ProductCard from '../components/ProductCard';
@@ -19,7 +25,7 @@ function HomePage() {
         setLoading(true);
         const response = await fetchProducts();
         setProducts(response.data);
-        setFilteredProducts(response.data); // Initially set filtered products to all products
+        setFilteredProducts(response.data); // First set filtered products to all products
       } catch (error) {
         setError(true);
       } finally {

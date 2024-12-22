@@ -1,7 +1,6 @@
 /**
  * @file Button.jsx
  * @name Button
- * @classdesc Button component to display a button with text
  * @param {string} text - The text to display on the button
  * @param {function} onClick - The function to call when the button is clicked
  * @returns Button component

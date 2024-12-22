@@ -14,7 +14,7 @@ function ReviewCard({ username, description, rating }) {
       <h3 className="font-bold text-lg">{username}</h3>
       <p className="italic text-gray-600">{description}</p>
       <div className="flex items-center">
-        // Display the star rating
+        {/* Display the star rating */}
         <StarRating rating={rating} />
       </div>
     </div>

@@ -2,18 +2,18 @@
  * @file ProductPage.jsx is the page component for displaying a single product.
  * @name ProductPage
  * @returns {JSX.Element} ProductPage component
- * 
+ *
  */
 
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { fetchProductById } from "../service/api";
-import { useCart } from "../context/CartContext";
-import Button from "../components/Button.jsx";
-import MessageBox from "../components/MessageBox.jsx";
-import LoadingBar from "../components/LoadingBar.jsx";
-import StarRating from "../components/StarRating.jsx";
-import ReviewCard from "../components/ReviewCard.jsx";
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { fetchProductById } from '../service/api';
+import { useCart } from '../context/CartContext';
+import Button from '../components/Button.jsx';
+import MessageBox from '../components/MessageBox.jsx';
+import LoadingBar from '../components/LoadingBar.jsx';
+import StarRating from '../components/StarRating.jsx';
+import ReviewCard from '../components/ReviewCard.jsx';
 
 function ProductPage() {
   const { id } = useParams();
@@ -22,7 +22,7 @@ function ProductPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [isAdding, setIsAdding] = useState(false); // Prevent multiple adds
-  const [buttonText, setButtonText] = useState("Add to Cart"); // Button text state
+  const [buttonText, setButtonText] = useState('Add to Cart'); // Button text state
 
   useEffect(() => {
     const fetchApi = async () => {
@@ -48,8 +48,8 @@ function ProductPage() {
 
     try {
       await addToCart(product);
-      setButtonText("Item added!");
-      setTimeout(() => setButtonText("Add to Cart"), 2000);
+      setButtonText('Item added!');
+      setTimeout(() => setButtonText('Add to Cart'), 2000);
     } finally {
       setIsAdding(false);
     }
@@ -98,9 +98,9 @@ function ProductPage() {
               <>
                 <span
                   style={{
-                    textDecoration: "line-through",
-                    color: "red",
-                    marginRight: "8px",
+                    textDecoration: 'line-through',
+                    color: 'red',
+                    marginRight: '8px',
                   }}
                 >
                   ${product.price.toFixed(2)}
@@ -116,12 +116,12 @@ function ProductPage() {
           <StarRating rating={product.rating} />
 
           <p>
-            Tags:{" "}
+            Tags:{' '}
             {product.tags && product.tags.length > 0 ? (
               product.tags.map((tag, index) => (
                 <span key={index} className="italic font-bold">
                   {tag}
-                  {index < product.tags.length - 1 ? ", " : ""}
+                  {index < product.tags.length - 1 ? ', ' : ''}
                 </span>
               ))
             ) : (

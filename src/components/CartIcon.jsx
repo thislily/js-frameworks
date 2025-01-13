@@ -3,7 +3,7 @@
  * @name CartIcon
  * @param {number} itemCount - The number of items in the cart
  * @returns {JSX.Element} Cart icon component
- * 
+ *
  */
 
 import React from 'react';

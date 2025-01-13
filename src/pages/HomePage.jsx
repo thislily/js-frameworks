@@ -11,7 +11,6 @@ import SearchBar from '../components/SearchBar';
 import MessageBox from '../components/MessageBox';
 import LoadingBar from '../components/LoadingBar';
 
-
 function HomePage() {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -47,17 +46,28 @@ function HomePage() {
   }, [searchTerm, products]);
 
   if (!products) {
-    return <MessageBox border='darkred 4px solid' message='We are having some dificulties, please come back later!' />;
+    return (
+      <MessageBox
+        border="darkred 4px solid"
+        message="We are having some dificulties, please come back later!"
+      />
+    );
   }
 
   return (
     <div>
-      <h1 className='font-heading text-4xl text-center my-6' >Welcome home friend, get shoppin'!</h1>
+      <h1 className="font-heading text-4xl text-center my-6">
+        Welcome home friend, get shoppin'!
+      </h1>
 
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       {loading && <LoadingBar />}
-      {error && <MessageBox border='darkred 4px solid' message='Something went wrong' />}
-      {filteredProducts.length === 0 && <MessageBox border='darkred 4px solid' message='No products found' />}
+      {error && (
+        <MessageBox border="darkred 4px solid" message="Something went wrong" />
+      )}
+      {filteredProducts.length === 0 && (
+        <MessageBox border="darkred 4px solid" message="No products found" />
+      )}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {filteredProducts.map((product) => (

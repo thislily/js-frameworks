@@ -70,7 +70,9 @@ function ContactPage() {
 
   return (
     <div className="p-6 max-w-xl mx-auto">
-      <h1 className="text-4xl font-heading font-bold mb-4 text-center">Contact Page</h1>
+      <h1 className="text-4xl font-heading font-bold mb-4 text-center">
+        Contact Page
+      </h1>
 
       {successMessage && (
         <MessageBox
@@ -95,7 +97,9 @@ function ContactPage() {
               className="w-full p-2 border border-gray-300 rounded-md"
               required
             />
-            {errors.fullName && <p className="text-red-500 text-sm">{errors.fullName}</p>}
+            {errors.fullName && (
+              <p className="text-red-500 text-sm">{errors.fullName}</p>
+            )}
           </div>
 
           {/* Subject */}
@@ -112,7 +116,9 @@ function ContactPage() {
               className="w-full p-2 border border-gray-300 rounded-md"
               required
             />
-            {errors.subject && <p className="text-red-500 text-sm">{errors.subject}</p>}
+            {errors.subject && (
+              <p className="text-red-500 text-sm">{errors.subject}</p>
+            )}
           </div>
 
           {/* Email */}
@@ -129,7 +135,9 @@ function ContactPage() {
               className="w-full p-2 border border-gray-300 rounded-md"
               required
             />
-            {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+            {errors.email && (
+              <p className="text-red-500 text-sm">{errors.email}</p>
+            )}
           </div>
 
           {/* Body */}
@@ -146,7 +154,9 @@ function ContactPage() {
               rows="4"
               required
             />
-            {errors.body && <p className="text-red-500 text-sm">{errors.body}</p>}
+            {errors.body && (
+              <p className="text-red-500 text-sm">{errors.body}</p>
+            )}
           </div>
 
           {/* Submit Button */}

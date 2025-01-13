@@ -2,18 +2,18 @@
  * @file Cart component
  * @name Cart
  * @returns {JSX.Element} Cart component
- * 
+ *
  */
 
-import React from "react";
-import { useCart } from "../context/CartContext";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from 'react';
+import { useCart } from '../context/CartContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCirclePlus,
   faCircleMinus,
   faCircleXmark,
-} from "@fortawesome/free-solid-svg-icons";
-import MessageBox from "./MessageBox";
+} from '@fortawesome/free-solid-svg-icons';
+import MessageBox from './MessageBox';
 
 function Cart() {
   const { cart, updateQuantity, removeFromCart, totalPrice, totalItems } =
@@ -26,7 +26,7 @@ function Cart() {
         cart.map((item, index) => (
           <div
             className="bg-white my-2 p-2 flex flex-row gap-2 rounded-md"
-            key={index}
+            key={item.id}
           >
             <img
               src={item.image.url}
@@ -56,22 +56,22 @@ function Cart() {
                   <>
                     <span
                       style={{
-                        textDecoration: "line-through",
-                        color: "red",
-                        marginRight: "8px",
+                        textDecoration: 'line-through',
+                        color: 'red',
+                        marginRight: '8px',
                       }}
                     >
-                      ${item.price ? item.price.toFixed(2) : "N/A"}
+                      ${item.price ? item.price.toFixed(2) : 'N/A'}
                     </span>
                     <span>
                       $
                       {item.discountedPrice
                         ? item.discountedPrice.toFixed(2)
-                        : "N/A"}
+                        : 'N/A'}
                     </span>
                   </>
                 ) : (
-                  <span>${item.price ? item.price.toFixed(2) : "N/A"}</span>
+                  <span>${item.price ? item.price.toFixed(2) : 'N/A'}</span>
                 )}
               </p>
               <div className="flex items-end justify-end">
@@ -89,13 +89,13 @@ function Cart() {
       ) : (
         <MessageBox
           border="darkorange 8px solid"
-          message={"Your cart is empty, time to shop!"}
+          message={'Your cart is empty, time to shop!'}
         />
       )}
       <p className="text-center text-lg font-semibold">
         {totalItems > 0 ? (
           <>
-            {totalItems} item{totalItems > 1 ? "s" : ""} in cart
+            {totalItems} item{totalItems > 1 ? 's' : ''} in cart
             <br />
             <span className="text-red-500">
               You Saved: $
@@ -113,7 +113,7 @@ function Cart() {
             </span>
           </>
         ) : (
-          ""
+          ''
         )}
       </p>
     </div>

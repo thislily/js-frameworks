@@ -2,10 +2,16 @@
  * @file CartContext.jsx is the context for managing the cart state.
  * @name CartContext
  * @returns {CartProvider} CartProvider component
- * 
+ *
  */
 
-import React, { createContext, useContext, useState, useEffect, useRef } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useRef,
+} from 'react';
 
 // Create context for cart and export it
 const CartContext = createContext();
@@ -13,7 +19,7 @@ export const useCart = () => useContext(CartContext);
 
 // Retrieve cart from local storage
 const getCartFromLocalStorage = () => {
-  const savedCart = localStorage.getItem("cart");
+  const savedCart = localStorage.getItem('cart');
   return savedCart ? JSON.parse(savedCart) : [];
 };
 
@@ -26,13 +32,16 @@ export const CartProvider = ({ children }) => {
 
   // Update local storage when cart changes
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
 
   // Update total items and total price when cart changes
   useEffect(() => {
     const items = cart.reduce((total, item) => total + item.quantity, 0);
-    const price = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+    const price = cart.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
     setTotalItems(items);
     setTotalPrice(price);
   }, [cart]);
@@ -44,7 +53,9 @@ export const CartProvider = ({ children }) => {
     if (existingItem) {
       setCart(
         cart.map((item) =>
-          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
         )
       );
     } else {
@@ -68,12 +79,12 @@ export const CartProvider = ({ children }) => {
         )
       );
     }
-  }
+  };
 
   //Clear Cart
   const clearCart = () => {
     setCart([]);
-  }
+  };
 
   // Provide the context value to the app
   return (
@@ -92,5 +103,4 @@ export const CartProvider = ({ children }) => {
       {children}
     </CartContext.Provider>
   );
-
-}
+};

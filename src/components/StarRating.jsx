@@ -3,7 +3,7 @@
  * @name StarRating
  * @param {object} props - The props object containing the rating to display
  * @returns JSX.Element
- * 
+ *
  */
 
 import React from 'react';

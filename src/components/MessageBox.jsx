@@ -4,7 +4,7 @@
  * @param {string} border - The border color of the message box (color, size, and style as in css)
  * @param {string} message - The message to display in the box
  * @returns {JSX.Element} MessageBox component
- * 
+ *
  */
 
 import React from 'react';
@@ -22,4 +22,4 @@ function MessageBox({ border, message }) {
   );
 }
 
-export default MessageBox
+export default MessageBox;

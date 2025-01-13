@@ -2,13 +2,13 @@
  * @fileoverview Header component
  * @name Header
  * @returns {JSX.Element} Header component
- * 
-*/
+ *
+ */
 
-import React from "react";
-import { Link } from "react-router-dom";
-import CartIcon from "./CartIcon";
-import { useCart } from "../context/CartContext";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import CartIcon from './CartIcon';
+import { useCart } from '../context/CartContext';
 
 function Header() {
   const { totalItems } = useCart();
@@ -16,7 +16,6 @@ function Header() {
   return (
     <div className="bg-blue-900 text-white w-full fixed top-0 z-10 ">
       <header className="bg-blue-900 text-white p-4 max-w-7xl flex justify-between mx-auto">
-
         {/* Logo */}
         <Link
           to="/"

@@ -5,9 +5,9 @@
  * @returns {JSX.Element} Product card component for displaying product details
  */
 
-import React from "react";
-import Button from "./Button";
-import StarRating from "./StarRating";
+import React from 'react';
+import Button from './Button';
+import StarRating from './StarRating';
 
 function ProductCard({ product }) {
   return (
@@ -40,9 +40,9 @@ function ProductCard({ product }) {
             {/* Display the original price with a strikethrough and the discounted price */}
             <span
               style={{
-                textDecoration: "line-through",
-                color: "tomato",
-                marginRight: "8px",
+                textDecoration: 'line-through',
+                color: 'tomato',
+                marginRight: '8px',
               }}
             >
               ${product.price.toFixed(2)}
@@ -57,12 +57,12 @@ function ProductCard({ product }) {
       {/* Display the product rating */}
       <StarRating rating={product.rating} />
       <p>
-        Tags:{" "}
+        Tags:{' '}
         {product.tags && product.tags.length > 0 ? (
           product.tags.map((tag, index) => (
             <span key={index} className="italic font-bold">
               {tag}
-              {index < product.tags.length - 1 ? ", " : ""}
+              {index < product.tags.length - 1 ? ', ' : ''}
             </span>
           ))
         ) : (
@@ -70,7 +70,7 @@ function ProductCard({ product }) {
         )}
       </p>
 
-      <Button text={"See Details"} />
+      <Button text={'See Details'} />
     </a>
   );
 }

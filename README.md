@@ -1,6 +1,6 @@
 # Storesville
 
-![Storesville Screenshot](screenshot.png)
+![Storesville Screenshot](src/Screenshot.png)
 
 ## 🚀 About the Project
 Storesville is an e-commerce website showcasing a wide range of products, intuitive product detail pages, and a smooth checkout flow. Developed using **React**, **Tailwind CSS**, and **React Router**, it focuses on modern web development best practices.
